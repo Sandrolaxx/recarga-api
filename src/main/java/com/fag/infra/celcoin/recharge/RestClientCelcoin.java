@@ -5,7 +5,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
 import com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeResponse;
+import com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -40,6 +40,6 @@ public interface RestClientCelcoin {
     @POST
     @Path("/v5/transactions/topups")
     @Consumes(MediaType.APPLICATION_JSON)
-    CelcoinRechargeResponse handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
+    CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
 
 }

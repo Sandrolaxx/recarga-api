@@ -1,12 +1,12 @@
 package com.fag.infra.celcoin.dto;
 
-public class CelcoinRechargeResponse {
+public class CelcoinRechargeResponseDTO {
 
     private Integer nsuNameProvider;
 
     private Integer authentication;
 
-    private CelcoinRechargeReceipt receipt;
+    private CelcoinRechargeReceiptDTO receipt;
 
     private String settleDate;
 
@@ -38,11 +38,11 @@ public class CelcoinRechargeResponse {
         this.authentication = authentication;
     }
 
-    public CelcoinRechargeReceipt getReceipt() {
+    public CelcoinRechargeReceiptDTO getReceipt() {
         return receipt;
     }
 
-    public void setReceipt(CelcoinRechargeReceipt receipt) {
+    public void setReceipt(CelcoinRechargeReceiptDTO receipt) {
         this.receipt = receipt;
     }
 

@@ -12,7 +12,7 @@ import com.fag.domain.repositories.IRechargeVendor;
 import com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
 import com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeResponse;
+import com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 import com.fag.infra.celcoin.mappers.CelcoinOperatorMapper;
 import com.fag.infra.celcoin.mappers.CelcoinProductMapper;
@@ -35,7 +35,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         try {
             CelcoinRechargeDTO rechargeDTO = CelcoinRechargeMapper.toVendorDTO(recharge);
 
-            CelcoinRechargeResponse response = restClient.handleRecharge(getToken(), rechargeDTO);
+            CelcoinRechargeResponseDTO response = restClient.handleRecharge(getToken(), rechargeDTO);
 
             recharge.setReceipt(response.getReceipt().getReceiptData());
             recharge.setTransactionId(response.getTransactionId());
